@@ -98,5 +98,8 @@ const articleSchema = new Schema({
   image8: {
     type: String,
   },
+  label: {
+    type: String,
+  },
 });
 module.exports = mongoose.model("Article", articleSchema);
