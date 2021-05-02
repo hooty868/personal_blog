@@ -2,8 +2,8 @@
 <html ⚡="">
   <head>
     <meta charset="utf-8" />
-    <title>The Recipe Blog</title>
-    <link rel="canonical" href="https://www.ampstart.com/" />
+    <title>The Blog of Decryption</title>
+    <link rel="canonical" href="http://172.20.10.2:3000/articles/" />
     <meta name="viewport" content="width=device-width" />
     <meta name="amp-google-client-id-api" content="googleanalytics" />
 
@@ -1293,6 +1293,9 @@
       .card .card-image {
         padding-top: 0.8rem;
       }
+      .card .card-image :hover {
+        opacity: 0.7;
+      }
       .card .card-image:first-child {
         padding-top: 0;
       }
@@ -1735,6 +1738,10 @@
         object-fit: contain;
       }
       /* article content start*/
+      .main__content {
+        display: flex;
+        justify-content: center;
+      }
       .title_article {
         margin-bottom: 0.5rem;
         font-weight: 700;
@@ -1755,7 +1762,9 @@
         padding-left: 10px;
         border-left: 8px solid #d1894dd0;
       }
-
+      .paragraph--container {
+        margin-bottom: 10px;
+      }
       .paragraph--container h2 {
         margin: 0;
         margin-bottom: 5px;
@@ -1773,6 +1782,9 @@
       .subarticle-wrapper {
         margin-top: 10px;
         margin-bottom: 30px;
+      }
+      .subarticle {
+        margin-bottom: 20px;
       }
       /* aside bar start */
       .sidebar {
@@ -1826,6 +1838,7 @@
       /* more--content end  */
       .article-footer {
         padding-left: 50px;
+        padding-right: 50px;
         background-color: rgb(32, 32, 32);
         color: white;
         height: 30px;
@@ -1863,34 +1876,35 @@
               height="70"
               layout="fixed"
             ></amp-img>
-            <div class="logo-container"><h1>解密之書</h1></div>
+            <a href="/" class="link_item"
+              ><div class="logo-container"><h1>解密之書</h1></div></a
+            >
           </div>
           <nav class="main-nav col-9 col-md-12">
             <ul class="navbar">
               <li class="topicNavItem">
-                <a href="#" class="link_item">首頁</a>
+                <a href="/" class="link_item">首頁</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">學習</a>
+                <a href="/articles/learn" class="link_item">學習</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">分享</a>
-              </li>
-              <li class="topicNavItem"><a href="#" class="link_item">3C</a></li>
-              <li class="topicNavItem">
-                <a href="#" class="link_item">食材</a>
+                <a href="/articles/share" class="link_item">分享</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">裝修</a>
+                <a href="/articles/digital" class="link_item">3C</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">穿搭</a>
+                <a href="/articles/food" class="link_item">食材</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">減肥</a>
+                <a href="/articles/decoration" class="link_item">裝修</a>
               </li>
               <li class="topicNavItem">
-                <a href="#" class="link_item">保養</a>
+                <a href="/articles/outfit" class="link_item">穿搭</a>
+              </li>
+              <li class="topicNavItem">
+                <a href="/articles/health" class="link_item">健康</a>
               </li>
             </ul>
           </nav>
@@ -1902,8 +1916,9 @@
           <p class="copyright">
             Copyright ©2021&nbsp;/&nbsp;<a href="/terms" rel="nofollow"
               >服務條款</a
-            >&nbsp;/&nbsp;<a href="mailto:dmca@kknews.cc" rel="nofollow">DMCA</a
-            >&nbsp;/&nbsp;<a href="mailto:support@kknews.cc" rel="nofollow"
+            >&nbsp;/&nbsp;<a href="#" rel="nofollow">DMCA</a>&nbsp;/&nbsp;<a
+              href="#"
+              rel="nofollow"
               >聯絡我們</a
             >
           </p>

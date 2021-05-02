@@ -101,5 +101,11 @@ const articleSchema = new Schema({
   label: {
     type: String,
   },
+  label2: {
+    type: String,
+  },
+  label3: {
+    type: String,
+  },
 });
 module.exports = mongoose.model("Article", articleSchema);
