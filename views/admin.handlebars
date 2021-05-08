@@ -12,7 +12,7 @@
         />
       </div>
       <div class="sidebar__menu__link sidebar__menu__link--folder">
-        <a href="/addArticles/new">
+        <a href="/articles/new">
           <img
             src="https://i.imgur.com/utegimS.png"
             style="width: 50px; height: 50px"
@@ -85,14 +85,14 @@
             {{ this.label1 }}&nbsp;{{ this.label2 }}&nbsp;{{ this.label3 }}
           </td>
           <td class="table__cell table__cell--action">
-            <a href="/addArticles/{{ this._id }}/edit" target="_blank">
+            <a href="/articles/{{ this._id }}/edit" target="_blank">
               <button type="button" class="btn btn-primary">編輯</button>
             </a>
             <a href="/articles/{{ this._id }}" target="_blank">
               <button type="button" class="btn btn-success">預覽</button>
             </a>
             <form
-              action="/article/{{ this._id }}/delete?_method=DELETE"
+              action="/articles/{{ this._id }}/delete?_method=DELETE"
               method="POST"
             >
               <button type="submit" class="btn btn-danger">刪除</button>

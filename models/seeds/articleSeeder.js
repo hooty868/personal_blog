@@ -1,14 +1,5 @@
-const mongoose = require("mongoose");
-const Todo = require("../article"); // 載入 article model
-mongoose.connect("mongodb://localhost/article-list", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-const db = mongoose.connection;
-db.on("error", () => {
-  console.log("mongodb error!");
-});
+const article = require("../article");
+const db = require("../../config/mongoose");
 
 const mongoObjectId = function () {
   var timestamp = ((new Date().getTime() / 1000) | 0).toString(16);
@@ -25,7 +16,7 @@ const mongoObjectId = function () {
 db.once("open", () => {
   console.log("mongodb connected!");
   const articleId = mongoObjectId();
-  Todo.create({
+  article.create({
     id: articleId,
     author: "小楚",
     title: "追星女孩必備好物：應援物尺寸合集",
