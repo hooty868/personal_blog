@@ -17,6 +17,6 @@ app.use(express.static(__dirname + "/public"));
 app.use(routes);
 
 // 設定 port 3000
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT}`);
 });
