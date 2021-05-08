@@ -1,7 +1,7 @@
 <main id="buzz-content" class="main__content">
   <div class="article__content container">
-    <div class="columns">
-      <div class="content__list col-7 col-md-12">
+    <div class="row">
+      <div class="content__list col-lg-8 col-12">
         <article>
           {{#if Article}}
           <div class="headline">
@@ -13,16 +13,22 @@
           </div>
           <time class="timeline__article">
             <p class="meta post-meta">
-              時間:&nbsp;{{ Article.time }}&nbsp;<em
-                >發表于&nbsp;{{ Article.category }}&nbsp;</em
-              >
+              時間:&nbsp;{{ Article.time }}&nbsp;
+              <em>發表于&nbsp;{{ Article.category }}&nbsp;</em>
             </p>
           </time>
           {{/if}}
           <div class="container__introduce">
-            <p>
+            <h4 class="text-justify">
               {{ Article.introduce }}
-            </p>
+            </h4>
+          </div>
+          <div class="article-image-container d-flex justify-content-center">
+            <img
+              class="card-img-top img-fluid"
+              alt="Responsive image"
+              src="{{ Article.image1 }}"
+            />
           </div>
           <div class="subarticle--list">
             <div class="subarticle-wrapper">
@@ -30,59 +36,9 @@
                 <div class="paragraph--container">
                   <h2 class="subtitle__paragraph">{{ Article.subtitle1 }}</h2>
                 </div>
-                <p class="subtitle__title-text">{{ Article.paragraph1 }}</p>
-
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
-                    src="{{ Article.image1 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
-                </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
+                <p class="subtitle__title-text text-justify">
+                  {{ Article.paragraph1 }}
+                </p>
               </div>
               {{#if Article.subtitle2}}
               <div class="subarticle">
@@ -91,56 +47,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph2 }}</p>
                 {{#if Article.image2}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image2 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -151,57 +66,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph3 }}</p>
                 {{#if Article.image3}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image3 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -212,57 +85,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph4 }}</p>
                 {{#if Article.image4}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image4 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -273,57 +104,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph5 }}</p>
                 {{#if Article.image4}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image5 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -334,57 +123,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph6 }}</p>
                 {{#if Article.image6}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image6 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -395,57 +142,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph7 }}</p>
                 {{#if Article.image7}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image7 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -456,57 +161,15 @@
                 </div>
                 <p class="subtitle__title-text">{{ Article.paragraph8 }}</p>
                 {{#if Article.image8}}
-                <div class="article-image-container">
-                  <amp-img
-                    alt="A view of the sea"
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
                     src="{{ Article.image8 }}"
-                    width="1"
-                    height="1"
-                    layout="responsive"
-                  >
-                  </amp-img>
+                  />
                 </div>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share by email "
-                  type="email"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Facebook"
-                  type="facebook"
-                  data-param-app_id="254325784911610"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Pinterest"
-                  type="pinterest"
-                  data-param-media="https://amp.dev/static/samples/img/amp.jpg"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Twitter"
-                  type="twitter"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
-
-                <amp-social-share
-                  class="rounded"
-                  aria-label="Share on Line"
-                  type="line"
-                  width="48"
-                  height="48"
-                ></amp-social-share>
                 {{/if}}
               </div>
               {{/if}}
@@ -514,7 +177,7 @@
           </div>
         </article>
       </div>
-      <section class="sidebar col-5 col-md-12" aria-label="Promoted content">
+      <section class="sidebar col-lg-4 col-12" aria-label="Promoted content">
         <div id="#" class="introduce--website">
           <div class="introduce--description">
             <h2 class="introduce--header"><strong>關於解密之書</strong></h2>
@@ -536,29 +199,205 @@
           </div>
         </div>
       </section>
-      <section class="more--content columns">
-        <h2 class="more-atricle--title col-12">更多相關文章</h2>
-        <section class="more-atricle container col-12">
-          <div class="columns">
-            {{#each relatedArticle}}
-            <div class="card card-container col-3 col-md-12">
-              <div class="card-image">
-                <a href="http://172.20.10.2:3000/articles/{{ this._id }}">
-                  <amp-img
-                    alt="view of the article content"
-                    height="250"
-                    layout="fixed-height"
-                    src="{{ this.coverImage }}"
-                  >
-                  </amp-img>
-                </a>
-              </div>
-              <a href="http://172.20.10.2:3000/articles/{{ this._id }}">
-                <div class="card-header">
-                  <div class="card-title h5">{{ this.title }}</div>
+      <div class="col-lg-12 divider"></div>
+      <div class="content__list col-lg-8 col-12 mt-10">
+        <article>
+          {{#if Article}}
+          <div class="headline">
+            <div class="container__headline">
+              <h1 class="title_article">
+                {{ Article.title }}
+              </h1>
+            </div>
+          </div>
+          <time class="timeline__article">
+            <p class="meta post-meta">
+              時間:&nbsp;{{ Article.time }}&nbsp;
+              <em>發表于&nbsp;{{ Article.category }}&nbsp;</em>
+            </p>
+          </time>
+          {{/if}}
+          <div class="container__introduce">
+            <h4 class="text-justify">
+              {{ Article.introduce }}
+            </h4>
+          </div>
+          <div class="article-image-container d-flex justify-content-center">
+            <img
+              class="card-img-top img-fluid"
+              alt="Responsive image"
+              src="{{ Article.image1 }}"
+            />
+          </div>
+          <div class="subarticle--list">
+            <div class="subarticle-wrapper">
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle1 }}</h2>
                 </div>
-                <div class="card-body">
-                  {{ this.introduce }}
+                <p class="subtitle__title-text text-justify">
+                  {{ Article.paragraph1 }}
+                </p>
+              </div>
+              {{#if Article.subtitle2}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle2 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph2 }}</p>
+                {{#if Article.image2}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image2 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle3}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle3 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph3 }}</p>
+                {{#if Article.image3}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image3 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle4}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle4 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph4 }}</p>
+                {{#if Article.image4}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image4 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle5}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle5 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph5 }}</p>
+                {{#if Article.image4}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image5 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle6}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle6 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph6 }}</p>
+                {{#if Article.image6}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image6 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle7}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle7 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph7 }}</p>
+                {{#if Article.image7}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image7 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+              {{#if Article.subtitle8}}
+              <div class="subarticle">
+                <div class="paragraph--container">
+                  <h2 class="subtitle__paragraph">{{ Article.subtitle8 }}</h2>
+                </div>
+                <p class="subtitle__title-text">{{ Article.paragraph8 }}</p>
+                {{#if Article.image8}}
+                <div
+                  class="article-image-container d-flex justify-content-center"
+                >
+                  <img
+                    class="card-img-top img-fluid"
+                    alt="Responsive image"
+                    src="{{ Article.image8 }}"
+                  />
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </article>
+      </div>
+      <section class="more--content col-12 row">
+        <h2 class="more-atricle--title">更多相關文章</h2>
+        <section class="more-atricle container">
+          <div class="row">
+            {{#each relatedArticle}}
+            <div class="card-container col-md-3 col-12">
+              <a href="/articles/{{ this._id }}">
+                <div class="card">
+                  <img
+                    class="card-img-top"
+                    alt="view of the article content"
+                    src="{{ this.coverImage }}"
+                  />
+
+                  <div class="card-body">
+                    <div class="card-header">
+                      <div class="card-title h5">{{ this.title }}</div>
+                    </div>
+                    <div class="card-text">
+                      {{ this.introduce }}
+                    </div>
+                  </div>
                 </div>
               </a>
             </div>

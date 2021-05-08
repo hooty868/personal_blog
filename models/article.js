@@ -5,6 +5,10 @@ const articleSchema = new Schema({
     type: String,
     required: true,
   },
+  author: {
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,
@@ -98,7 +102,7 @@ const articleSchema = new Schema({
   image8: {
     type: String,
   },
-  label: {
+  label1: {
     type: String,
   },
   label2: {

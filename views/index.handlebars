@@ -1,29 +1,25 @@
 <main id="buzz-content" class="main__content">
   <div class="article__content container">
-    <div class="arttcle--show columns">
-      <section class="more--content columns col-8 col-md-12">
+    <div class="arttcle--show row">
+      <section class="more--content columns col-lg-9 col-12">
         <h2 class="more-atricle--title col-12">最新文章</h2>
-        <section class="more-atricle container col-12">
-          <div class="columns">
+        <section class="more-atricle container">
+          <div class="row">
             {{#each relatedArticle}}
-            <div class="card card-container col-6 col-md-12">
-              <div class="card-image">
-                <a href="http://172.20.10.2:3000/articles/{{ this._id }}">
-                  <amp-img
+            <div class="card-container col-md-4 col-12">
+              <a href="/articles/{{ this._id }}">
+                <div class="card">
+                  <img
+                    class="card-img-top"
                     alt="view of the article content"
-                    height="250"
-                    layout="fixed-height"
                     src="{{ this.coverImage }}"
-                  >
-                  </amp-img>
-                </a>
-              </div>
-              <a href="http://172.20.10.2:3000/articles/{{ this._id }}">
-                <div class="card-header">
-                  <div class="card-title h5">{{ this.title }}</div>
-                </div>
-                <div class="card-body">
-                  {{ this.introduce }}
+                  />
+
+                  <div class="card-body card-content">
+                    <div class="card-header">
+                      <div class="card-title h5">{{ this.title }}</div>
+                    </div>
+                  </div>
                 </div>
               </a>
             </div>
@@ -31,13 +27,16 @@
           </div>
         </section>
       </section>
-      <section class="sidebar col-3 col-md-12" aria-label="Promoted content">
+      <section
+        class="sidebar col-lg-3 col-12 pt-10"
+        aria-label="Promoted content"
+      >
         <div id="#" class="introduce--website">
           <div class="introduce--description">
             <h2 class="introduce--header"><strong>關於解密之書</strong></h2>
-            <amp-text class="introduce--content"
-              >解密之書致力於「各國網站的生活技巧與終點整理」為主題，透過文字作品與圖文，濃縮並精簡內容，提供有趣且實用的重點筆記給你們。</amp-text
-            >
+            <h6 class="introduce--content">
+              解密之書致力於「各國網站的生活技巧與終點整理」為主題，透過文字作品與圖文，濃縮並精簡內容，提供有趣且實用的重點筆記給你們。
+            </h6>
           </div>
           <div class="introduce--link">
             <a class="et_pb_button et_pb_promo_button" href="#">閱讀更多</a>

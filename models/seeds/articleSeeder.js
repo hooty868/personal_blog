@@ -27,6 +27,7 @@ db.once("open", () => {
   const articleId = mongoObjectId();
   Todo.create({
     id: articleId,
+    author: "小楚",
     title: "追星女孩必備好物：應援物尺寸合集",
     time: new Date(),
     category: "share",
@@ -42,10 +43,14 @@ db.once("open", () => {
     paragraph2:
       "明信片: 14.8cmX10cm易開罐:180cmX80cm桌曆:21cmX14cm御守: 5cmX6.5cm書籤: 5cmX14cm海报: 一般物A4A5",
     image2: "https://upload.cc/i1/2021/05/01/WzBtKg.png",
+    label1: "手做",
+    label2: "粉絲",
+    label3: "追星",
   });
   console.log("mongodb connected! write article1 ");
   Todo.create({
     id: articleId,
+    author: "小楚",
     title: "我在哥大的演講經歷與血淚，5招讓你驚艷四座",
     time: new Date(),
     category: "share",
@@ -73,9 +78,13 @@ db.once("open", () => {
     paragraph5:
       "記憶階段,讓你傳遞的訊息更易於被記住,加入幫助記憶的線索關鍵詞,為了幫助聽眾認識重要的事實，請使用一些提示關鍵詞，比如,現在，我要展示有關,的定義,最重要的概念是,演講語速稍快,大部分演講者語速在每分鐘100,175個單詞。但是，聽眾每分鐘能夠消化400,800個單詞。因此,利於理解的最佳演講速度是每分鐘講275,300個單詞,不要在一開始就陳述核心觀點,在演講剛開始的時候，大部分聽眾落座不久，他們還沒有做好傾聽的準備。 通過視覺輔助促進記憶,精心挑選那些簡潔並且與你的核心觀點有相關性的圖片或圖表，這能夠使聽眾記住雙倍的內容。",
     image5: "https://upload.cc/i1/2021/05/02/14lcdU.png",
+    label1: "演講",
+    label2: "國外留學",
+    label3: "技巧",
   });
   Todo.create({
     id: articleId,
+    author: "小楚",
     title: "法語學習必備App｜自學法語血淚談快收藏進你的筆記裡",
     time: new Date(),
     category: "share",
@@ -107,6 +116,9 @@ db.once("open", () => {
     paragraph6:
       "這個是我很喜歡的軟件，在上面可以選擇你想學習的語言,很快可以找到語言夥伴一起交流。 ,特別是在國內的朋友，如果平時身邊法國人不多的話,可以推薦tandem,在上面有很多法國人,你可以拿中文作為交換。",
     image6: "https://upload.cc/i1/2021/05/02/14lcdU.png",
+    label1: "app",
+    label2: "語言",
+    label3: "法國",
   });
   console.log("mongodb connected! write article2 ");
   console.log("done");

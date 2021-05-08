@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require("mongoose");
 const Articles = require("./models/article");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -12,7 +14,7 @@ mongoose.connect("mongodb://localhost/article-list", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
+app.use(express.static(__dirname + "/public"));
 const db = mongoose.connection;
 db.on("error", () => {
   console.log("mongodb error!");
@@ -159,12 +161,11 @@ app.get("/articles/:id", (req, res) => {
 });
 
 app.get("/addArticles/new", (req, res) => {
-  return res.render("new");
+  res.render("new");
 });
 
 app.post("/article", (req, res) => {
   const data = req.body;
-  console.log(data);
   const {
     id = mongoObjectId(),
     title,
@@ -173,6 +174,7 @@ app.post("/article", (req, res) => {
     view = 0,
     coverImage,
     introduce,
+    author,
     subtitle1,
     paragraph1,
     image1,
@@ -200,8 +202,9 @@ app.post("/article", (req, res) => {
     label,
     label2,
     label3,
-  } = req.body;
-  return Todo.create({
+  } = data;
+
+  return Articles.create({
     id,
     title,
     time,
@@ -209,6 +212,7 @@ app.post("/article", (req, res) => {
     view,
     coverImage,
     introduce,
+    author,
     subtitle1,
     paragraph1,
     image1,
@@ -236,8 +240,8 @@ app.post("/article", (req, res) => {
     label,
     label2,
     label3,
-  }) // 存入資料庫
-    .then(() => res.redirect("/")) // 新增完成後導回首頁
+  })
+    .then(() => res.redirect("/admin-list")) // 新增完成後導回首頁
     .catch((error) => console.log(error));
 });
 
@@ -253,6 +257,77 @@ app.get("/", (req, res) => {
       res.render("index", { relatedArticle });
     })
     .catch((error) => console.error(error));
+});
+
+app.get("/admin-list", (req, res) => {
+  Articles.find()
+    .lean()
+    .then((articles) => {
+      res.render("admin", { articles });
+    })
+    .catch((error) => console.error(error));
+});
+
+app.delete("/article/:id/delete", (req, res) => {
+  const id = req.params.id;
+  return Articles.findById(id)
+    .then((article) => article.remove())
+    .then(() => res.redirect("/admin-list"))
+    .catch((error) => console.log(error));
+});
+
+app.get("/addArticles/:id/edit", (req, res) => {
+  const id = req.params.id;
+  return Articles.findById(id)
+    .lean()
+    .then((article) => {
+      res.render("edit", { article });
+    })
+    .catch((error) => console.log(error));
+});
+
+app.put("/article/:id/edit", (req, res) => {
+  const id = req.params.id;
+  const data = req.body;
+  return Articles.findById(id)
+    .then((article) => {
+      article.title = data.title;
+      article.introduce = data.introduce;
+      article.category = data.category;
+      article.coverImage = data.coverImage;
+      article.introduce = data.introduce;
+      article.author = data.author;
+      article.subtitle1 = data.subtitle1;
+      article.paragraph1 = data.paragraph1;
+      article.image1 = data.image1;
+      article.subtitle2 = data.subtitle2;
+      article.paragraph2 = data.paragraph2;
+      article.image2 = data.image2;
+      article.subtitle3 = data.subtitle3;
+      article.paragraph3 = data.paragraph3;
+      article.image3 = data.image3;
+      article.subtitle4 = data.subtitle4;
+      article.paragraph4 = data.paragraph4;
+      article.image4 = data.image4;
+      article.subtitle5 = data.subtitle5;
+      article.paragraph5 = data.paragraph5;
+      article.image5 = data.image5;
+      article.subtitle6 = data.subtitle6;
+      article.paragraph6 = data.paragraph6;
+      article.image6 = data.image6;
+      article.subtitle7 = data.subtitle7;
+      article.paragraph7 = data.paragraph7;
+      article.image7 = data.image7;
+      article.subtitle8 = data.subtitle8;
+      article.paragraph8 = data.paragraph8;
+      article.image8 = data.image8;
+      article.label = data.label;
+      article.label2 = data.label2;
+      article.label3 = data.label3;
+      return article.save();
+    })
+    .then(() => res.redirect(`/articles/${id}`))
+    .catch((error) => console.log(error));
 });
 
 // 設定 port 3000

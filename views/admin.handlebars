@@ -1,0 +1,106 @@
+<div class="admin-container">
+  <nav class="admin-sidebar">
+    <div class="sidebar__home"></div>
+    <div class="sidebar__menu">
+      <div
+        class="sidebar__menu__link sidebar__menu__link--frame sidebar__menu__link--active"
+      >
+        <img
+          src="https://i.imgur.com/vV1SUid.png"
+          style="width: 50px; height: 50px"
+          alt="frame"
+        />
+      </div>
+      <div class="sidebar__menu__link sidebar__menu__link--folder">
+        <a href="/addArticles/new">
+          <img
+            src="https://i.imgur.com/utegimS.png"
+            style="width: 50px; height: 50px"
+            alt="folder"
+          />
+        </a>
+      </div>
+      <div class="sidebar__menu__link sidebar__menu__link--mail">
+        <img
+          src="https://i.imgur.com/llsDoQ7.png"
+          alt="mail"
+          style="width: 50px; height: 50px"
+        />
+      </div>
+      <!-- darkmode toggle -->
+    </div>
+  </nav>
+  <main class="main-admin">
+    <h1 class="main__title">文章製作列表</h1>
+    <table class="main__table">
+      <thead>
+        <tr class="table__header table__row">
+          <th class="table__cell table__cell--checkbox">
+            <span class="review__article">審核</span>
+          </th>
+          <th class="table__cell table__cell--id">作者</th>
+          <th class="table__cell table__cell--name">類別</th>
+          <th class="table__cell table__cell--advertiser">
+            <span class="cell__advertiser__line">主要筆記內容</span>
+            <span class="cell__advertiser__line cell__advertiser__line--group"
+              >小紅書貼文內容</span
+            >
+          </th>
+          <th class="table__cell table__cell--description">封面圖片</th>
+          <th class="table__cell table__cell--price">
+            <span>瀏覽數</span>
+          </th>
+          <th class="table__cell table__cell--starttime">
+            <span>文章發文日期</span>
+          </th>
+          <th class="table__cell table__cell--endtime">
+            <span>關鍵字</span>
+          </th>
+          <th class="table__cell table__cell--action">Action</th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        {{#each articles}}
+        <tr class="table__row">
+          <td class="table__cell table__cell--checkbox">
+            <input type="checkbox" />
+          </td>
+          <td class="table__cell table__cell--id">{{ this.author }}</td>
+          <td class="table__cell table__cell--name">{{ this.category }}</td>
+          <td class="table__cell table__cell--advertiser">
+            <span class="cell__advertiser__line">{{ this.introduce }}</span>
+          </td>
+          <td class="table__cell table__cell--description">
+            <img
+              src="{{ this.coverImage }}"
+              alt="預覽圖"
+              style="width: 200px; height: 200px"
+            />
+          </td>
+          <td class="table__cell table__cell--price">{{ this.view }}</td>
+          <td class="table__cell table__cell--starttime">
+            {{ this.time }}
+          </td>
+          <td class="table__cell table__cell--endtime">
+            {{ this.label1 }}&nbsp;{{ this.label2 }}&nbsp;{{ this.label3 }}
+          </td>
+          <td class="table__cell table__cell--action">
+            <a href="/addArticles/{{ this._id }}/edit" target="_blank">
+              <button type="button" class="btn btn-primary">編輯</button>
+            </a>
+            <a href="/articles/{{ this._id }}" target="_blank">
+              <button type="button" class="btn btn-success">預覽</button>
+            </a>
+            <form
+              action="/article/{{ this._id }}/delete?_method=DELETE"
+              method="POST"
+            >
+              <button type="submit" class="btn btn-danger">刪除</button>
+            </form>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </main>
+</div>
