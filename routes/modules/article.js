@@ -14,7 +14,7 @@ const mongoObjectId = function () {
   );
 };
 
-router.get("/new/learn", (req, res) => {
+router.get("/learn", (req, res) => {
   return Articles.find({ category: "learn" })
     .sort({ view: 1 })
     .lean()
@@ -29,7 +29,7 @@ router.get("/new/learn", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/share", (req, res) => {
+router.get("/share", (req, res) => {
   return Articles.find({ category: "share" })
     .sort({ view: 1 })
     .lean()
@@ -44,7 +44,7 @@ router.get("/new/share", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/digital", (req, res) => {
+router.get("/digital", (req, res) => {
   return Articles.find({ category: "digital" })
     .sort({ view: 1 })
     .lean()
@@ -59,7 +59,7 @@ router.get("/new/digital", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/food", (req, res) => {
+router.get("/food", (req, res) => {
   return Articles.find({ category: "food" })
     .sort({ view: 1 })
     .lean()
@@ -74,7 +74,7 @@ router.get("/new/food", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/decoration", (req, res) => {
+router.get("/decoration", (req, res) => {
   return Articles.find({ category: "decoration" })
     .sort({ view: 1 })
     .lean()
@@ -89,7 +89,7 @@ router.get("/new/decoration", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/outfit", (req, res) => {
+router.get("/outfit", (req, res) => {
   return Articles.find({ category: "outfit" })
     .sort({ view: 1 })
     .lean()
@@ -104,7 +104,7 @@ router.get("/new/outfit", (req, res) => {
     .catch((error) => console.log(error));
 });
 
-router.get("/new/health", (req, res) => {
+router.get("/health", (req, res) => {
   return Articles.find({ category: "health" })
     .sort({ view: 1 })
     .lean()
