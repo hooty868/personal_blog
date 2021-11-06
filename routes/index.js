@@ -1,9 +1,10 @@
-const express = require("express");
-const router = express.Router();
-const article = require("./modules/article");
-const home = require("./modules/home");
+const express = require('express')
+const router = express.Router()
 
-router.use("/articles", article);
-router.use("/", home);
+const home = require('./modules/home')
+const currency = require('./modules/currency')
+router.use('/', home)
 
-module.exports = router;
+router.use('/currency', currency)
+
+module.exports = router
